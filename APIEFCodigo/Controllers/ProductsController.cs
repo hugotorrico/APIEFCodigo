@@ -110,15 +110,7 @@ namespace APIEFCodigo.Controllers
         [ResponseType(typeof(List< Products>))]
         public IHttpActionResult PostProducts(List< Products> products)
         {
-           
-            foreach (var item in products)
-            {
-                db.Products.Add(item);
-                db.SaveChanges();
-            }
-
-
-
+        
             db.Products.AddRange(products);
             db.SaveChanges();
 
